@@ -1,0 +1,19 @@
+{
+  "name": "knex-pool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "i": "^0.3.7",
+    "knex": "^0.95.11",
+    "mysql": "^2.18.1",
+    "npm": "^7.24.1",
+    "uuid": "^8.3.2"
+  }
+}
