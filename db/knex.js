@@ -1,6 +1,8 @@
 let createEmployee = require('../createEmployee');
 require('dotenv').config();
 
+
+console.log('Min-pool',process.env.DB_MIN_CONNECTION_POOL_SIZE)
 module.exports = {
     client: 'mysql',
     connection: {
@@ -11,8 +13,8 @@ module.exports = {
         database: 'Pool',
     },
     pool: {
-        min: parseInt(process.env.DB_MIN_CONNECTION_POOL_SIZE),
-        max: parseInt(process.env.DB_MAX_CONNECTION_POOL_SIZE),
+        min: parseInt(process.env.DB_MIN_CONNECTION_POOL_SIZE,10) || 2,
+        max: parseInt(process.env.DB_MAX_CONNECTION_POOL_SIZE,10) || 10,
     },
     migrations: {
         tableName: 'knex_migrations'
