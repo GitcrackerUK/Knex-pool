@@ -1,7 +1,7 @@
 const services = require('../services');
 const TableService = new services.TableService();
 
-class TableController {
+class PostController {
     async addRow(req, res) {
         console.log("body",req.body)
         try {
