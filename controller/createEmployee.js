@@ -1,9 +1,9 @@
-const uuidv4 = require('uuid').v4()
+const uuidv4 = require('uuid')
 
 let employee = {}
 
 function created_uuid(){
- return uuidv4;
+ return uuidv4.v4();
 }
 
 function createRand(arrLength){
@@ -31,7 +31,7 @@ function createEmail(name, surname){
 function getRandomeGender(){
     let gender;
     let randNum = createRand(10)
-    gender = randNum < 5 ? "Male":"Female"
+    gender = randNum <= 5 ? "Male":"Female"
 
     return gender
 }
@@ -45,7 +45,5 @@ function createEmployee(){
  employee.gender = getRandomeGender()
  return employee;
 }
-
-console.log(createEmployee())
 
 module.exports = createEmployee
