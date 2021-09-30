@@ -1,16 +1,21 @@
 const services = require('../services');
-const TableService = new services.TableService();
+const PostService = new services.PostService();
 
 class PostController {
-    async addRow(req, res) {
+    async addPostToTable(req, res) {
         console.log("body",req.body)
-        try {
-            TableService.addNewRowToTable({rowName:"gender"});
-            res.status(201).json({ message: 'row added' });
-        } catch (err) {
-            console.error(err);
+        if(req.body){
+            try {
+                PostService.addNewPostToTable(req.body);
+                res.status(201).json({ message: 'post added' });
+            } catch (err) {
+                console.error(err);
+            }
+        }else{
+            res.json({ message: 'Failed to post!!! Body undefined' });
         }
+        
     }
 }
 
-module.exports = new TableController();
+module.exports = new PostController();
