@@ -1,6 +1,5 @@
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 
-console.log('Min-pool',process.env.DB_MIN_CONNECTION_POOL_SIZE)
 module.exports = {
     client: 'mysql',
     connection: {
