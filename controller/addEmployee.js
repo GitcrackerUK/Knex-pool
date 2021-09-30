@@ -1,6 +1,7 @@
-const createEmployee = require('../utils/createEmployee');
-const EmployeeService = new services.EmployeeService;
 const services = require('../services');
+const EmployeeService = new services.EmployeeService;
+const createEmployee = require('../utils/createEmployee');
+
 
 class employeeController{
   async  newEmployee(req,res){
