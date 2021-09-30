@@ -14,15 +14,16 @@ class EmployeeService {
     }
 }
 
-class TableService {
-    async addNewRowToTable({ rowName }) {
-        db.table('Employees', function (table) {
-            table.string(rowName);
-        });
+class PostService {
+    async addNewPostToTable({ user,post }) {
+       await db("Post").inset({
+        user,
+        post
+       })
     }
 }
 
 module.exports = { 
     EmployeeService: EmployeeService,
-     TableService: TableService 
+    PostService: PostService 
     };
