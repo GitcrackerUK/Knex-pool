@@ -1,8 +1,7 @@
-let createEmployee = require('./createEmployee');
+let createEmployee = require('../createEmployee');
 require('dotenv').config();
 
-
-const knex = require('knex')({
+module.exports = {
     client: 'mysql',
     connection: {
         host: process.env.DB_HOST,
@@ -15,14 +14,7 @@ const knex = require('knex')({
         min: parseInt(process.env.DB_MIN_CONNECTION_POOL_SIZE),
         max: parseInt(process.env.DB_MAX_CONNECTION_POOL_SIZE),
     },
-});
-
-knex.raw('SELECT VERSION()')
-    .then((version) => console.log(version[0][0]))
-    .catch((err) => {
-        console.log(err);
-        throw err;
-    })
-    .finally(() => {
-        knex.destroy();
-    });
+    migrations: {
+        tableName: 'knex_migrations'
+      }
+};
