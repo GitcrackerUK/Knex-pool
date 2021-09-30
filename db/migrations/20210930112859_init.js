@@ -6,7 +6,7 @@ exports.up = function (knex) {
         table.string('surname_name').notNullable();
         table.string('email').notNullable().unique();
         table.string('sse');
-        table.timestamp(true, true);
+        table.timestamps(true, true);
     });
 };
 
