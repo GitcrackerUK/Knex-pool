@@ -1,8 +1,10 @@
 const addEmployee = require('../controller/addEmployee')
+const changeTable = require('../controller/changeTable')
 const timeout = require('express-timeout-handler');
 const express = require('express')
 
 const Router = express.Router()
 Router.post('/Employee', timeout.set(4000), addEmployee.newEmployee)
+Router.post('/AddRow', timeout.set(4000), changeTable.addRow)
 
 module.exports = Router
