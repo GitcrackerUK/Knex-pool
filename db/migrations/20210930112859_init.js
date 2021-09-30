@@ -1,15 +1,15 @@
-
-exports.up = function(knex) {
-  return knex.createTable('Employee',(table)=>{
-    table.increments('id');
-    table.string('uid').notNullable().unique()
-    table.string('firstName').notNullable()
-    table.string('surnameName').notNullable()
-    table.string('email').notNullable().unique()
-    table.string('sse')
-  })
+exports.up = function (knex) {
+    return knex.schema.createTable('Employees', (table) => {
+        table.increments('id');
+        table.string('uid').notNullable().unique();
+        table.string('first_name').notNullable();
+        table.string('surname_name').notNullable();
+        table.string('email').notNullable().unique();
+        table.string('sse');
+        table.timestamp(true, true);
+    });
 };
 
-exports.down = function(knex) {
-  
+exports.down = function (knex) {
+  return knex.schema.dropTable('Employees');
 };
