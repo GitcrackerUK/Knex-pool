@@ -1,7 +1,7 @@
 const db = require('../db');
 
 class EmployeeService {
-    async newEmployee({ uid, firstName, lastName, email, sse, gender }) {
+    async newEmployee({ uid, firstName, lastName, email, sse }) {
         await db('Employees').insert({
             uid: uid,
             first_name: firstName,
@@ -15,9 +15,10 @@ class EmployeeService {
 }
 
 class PostService {
-    async addNewPostToTable({ user,post }) {
-       await db("Post").inset({
+    async addNewPostToTable({ user,title, post }) {
+       await db("Posts").insert({
         user,
+        title,
         post
        })
     }
