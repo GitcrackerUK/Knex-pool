@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "npx knex migrate:latest --knexfile db/knex.js"
+    "migrate": "npx knex migrate:latest --knexfile db/knex.js",
+    "rollback": "npx knex migrate:rollback --knexfile db/knex.js"
   },
   "author": "",
   "license": "ISC",
