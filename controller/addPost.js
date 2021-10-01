@@ -3,7 +3,6 @@ const PostService = new services.PostService();
 
 class PostController {
     async addPostToTable(req, res) {
-        console.log("body",req.body)
         if(req.body){
             try {
                 PostService.addNewPostToTable(req.body);
